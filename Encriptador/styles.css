@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --fuente-inter: "Inter", sans-serif;
+}
+
+body {
+    background-color: #c4d4f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 0.625rem;
+    box-sizing: border-box;
+}
+
+.left, .right {
+    width: 48%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 2rem;
+}
+
+.Letra {
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+    width: 5rem;
+    height: 3rem;
+}
+
+.texto, .textoEncriptado {
+    width: 100%;
+    border-width: 0rem;
+    border-radius: 1.5rem;
+    padding: 0.625rem;
+    font-family: var(--fuente-inter);
+    font-weight: 300;
+    font-size: 1rem;
+    color: #0A3871;
+    margin-top: 1rem;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    max-width: 680px;
+    height: 24rem ;
+    resize: vertical;
+}
+
+.texto {
+    font-family: var(--fuente-inter);
+    background-color: #c4d4f5;
+    color: #0A3871;
+    font-weight: 300;
+}
+
+.textoEncriptado {
+    background-color: #ffffff;
+}
+
+.note {
+    display: flex; /* Usar flexbox para el contenido */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: left; /* Centrar horizontalmente */
+    padding: 10px; /* Espacio interno alrededor del contenido */
+    margin: 10px; /* Espacio externo alrededor del contenedor */
+    background-color: #c4d4f5; /* Fondo gris claro para visibilidad */
+    border-radius: 5px; /* Bordes redondeados */
+    flex: 1 1 auto; /* Permitir que .note crezca y se encoja */
+    max-width: 100%; /* Asegurarse de que no se expanda más allá del contenedor padre */
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
+    font-family: var(--fuente-inter);
+    font-weight: 400;
+    font-size: 1em; /* Tamaño de fuente adaptable */
+}
+
+/* Hacer que la imagen dentro de .note sea responsiva */
+.note .icono {
+    max-width: 1rem; /* Tamaño máximo para la imagen */
+    height: auto; /* Mantener la relación de aspecto */
+    margin-right: 1rem; /* Espacio entre la imagen y el texto */
+    justify-content: left;
+}
+
+/* Asegurarse de que el texto se ajuste al contenedor */
+.note {
+    word-wrap: break-word; /* Romper palabras largas para evitar desbordamiento */
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22rem;
+    z-index: 5;
+}
+
+button {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 0.3125rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    width: 45%;
+}
+
+.encrypt {
+    background-color: #0A3871;
+    color: white;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    font-family: var(--fuente-inter);
+}
+
+.decrypt {
+    padding: 0.625rem 1.25rem;
+    border: 0.125rem solid #003bff;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    font-family: var(--fuente-inter);
+    cursor: pointer;
+    background-color: #aab3c4;
+    color: #0A3871;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.textoEncriptado:not(:empty) ~ .decrypt {
+    background-color: white;
+    color: #003bff;
+}
+
+.decrypt:hover {
+    background-color: #003bff;
+    color: white;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #c4d4f5;
+    border-radius: 2rem;
+    border: none;
+}
+
+.copy {
+    padding: 0.625rem 1.25rem;
+    border: 0.125rem solid #003bff;
+    border-radius: 0.3125rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    background-color: white;
+    color: #003bff;
+    display: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.textoEncriptado:not(:empty) + #copyButton {
+    display: block;
+}
+
+.copy:hover {
+    background-color: #003bff;
+    color: white;
+}
+
+.responsive-img {
+    width: 100%;
+    height: 24rem;
+    margin-top: -1rem;
+    margin-bottom: -4rem;
+    border-radius: 2rem; /* 32px converted to rem */
+}
+
+#noTextImage2 {
+    display: block;
+}
+
+@media (max-width: 48rem) {
+    body {
+        flex-direction: column;
+        padding: 0.625rem;
+    }
+
+    .left, .right {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .right {
+        align-items: stretch;
+    }
+
+    #noTextImage1 {
+        display: none;
+    }
+    .responsive-img {
+        height: 10rem; /* Reducir altura en pantallas más pequeñas */
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Encriptación/Desencriptación</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="left">
+    <img class="Letra" src="/Assets/Letra.png" alt="Letra alura">
+    <textarea class="texto" id="inputText" placeholder="Ingrese el texto aqui..."></textarea>
+    <div class="buttons">
+      <button id="encryptButton" class="encrypt">Encriptar</button>
+      <button id="decryptButton" class="decrypt">Desencriptar</button>
+    </div>
+    <div class="note">
+        <img class="icono" src="/Assets/32175.png" alt="Icóno informativo">
+        Sólo letras minúsculas y sin acentos</div>
+     </div>
+  <div class="right">
+    <div id="noTextImageContainer">
+      <img id="noTextImage1" class="responsive-img" src="/Assets/11.png" alt="Primera imagen">
+      <img id="noTextImage2" class="responsive-img" src="/Assets/12.png" alt="Segunda imagen">
+    </div>
+    <textarea class="textoEncriptado" id="outputText" placeholder="El resultado aparecerá aquí..." readonly></textarea>
+    <button id="copyButton" class="copy">Copiar</button>
+  </div>
+
+  <script src="../encriptador2.js"></script>
+</body>
+</html>
